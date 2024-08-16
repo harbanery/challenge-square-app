@@ -22,28 +22,28 @@ const ModalAddCustomer = () => {
   };
 
   const handleAddCustomer = () => {
-    dispatch(createCustomer(customer));
+    dispatch(createCustomer(customer, { close: handleClose }));
 
     setCustomer({
       name: "",
       level: "Warga",
     });
-
-    handleClose();
   };
 
   return (
     <>
       <button
         onClick={handleOpen}
-        className="flex justify-center items-center rounded-lg max-w-[186px] w-full h-[45px] text-white bg-[#ffffff20]"
+        className="flex justify-center items-center rounded-lg max-w-[45px] xl:max-w-[186px] w-full h-[45px] text-white bg-[#ffffff20]"
       >
-        <div className="flex justify-center gap-1.5">
+        <div className="flex justify-center items-center gap-1.5">
           <img
             className="w-[16px] h-[16px]"
             src="/src/assets/img/icons/sum.png"
           />
-          <span className="font-semibold text-[12px] ">Add New Customer</span>
+          <span className="hidden xl:block font-semibold text-[12px] ">
+            Add New Customer
+          </span>
         </div>
       </button>
       <Modal
@@ -52,7 +52,7 @@ const ModalAddCustomer = () => {
         aria-labelledby="modal-add-customer"
         aria-describedby="modal-create-customer"
       >
-        <div className="font-quicksand flex flex-col gap-6 rounded-lg absolute bg-white top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-1/2 shadow-2xl p-4">
+        <div className="font-quicksand flex flex-col gap-6 rounded-lg absolute bg-white top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-11/12 sm:w-1/2 lg:w-1/4 shadow-2xl p-4">
           <header className="flex flex-col p-3 bg-[#5D5FEF] text-white rounded-lg">
             <h1 className="font-bold text-xl">Add New Customer</h1>
             <p className="font-satoshi text-xs leading-6 tracking-[1.5%] w-2/5 mt-1">

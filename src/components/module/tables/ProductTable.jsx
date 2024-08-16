@@ -15,9 +15,11 @@ const ProductTable = ({ dataProduct = {}, customerId = 0, close }) => {
   };
 
   const handleChangeQuantity = (customerId, productId, quantity) => {
-    dispatch(updateCustomerProductQuantity(customerId, productId, quantity));
-
-    close();
+    dispatch(
+      updateCustomerProductQuantity(customerId, productId, quantity, {
+        close,
+      })
+    );
   };
 
   return (
